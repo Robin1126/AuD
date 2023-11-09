@@ -24,6 +24,10 @@ public class StackTest {
             // 读取每一个字符并且压入栈中
             arrayStack.push(str.charAt(i));
         }
+        // 读取之前先判断是否为空，如果为空则报异常
+        if (arrayStack.isEmpty()) {
+            throw new RuntimeException("This Stack is Empty!");
+        }
         // 然后依次读取出来组成字符串，比较两者是否相同
         String newStr = "";
         int length = arrayStack.length();
