@@ -101,6 +101,38 @@ public class ArrayStack {
     public int length() {
         return this.top + 1;
     }
+
+    // 判断是否是一个运算符，这里只针对加减乘除
+    public boolean isOper(char v) {
+        return v == '+' || v == '-' || v == '*' || v == '/';
+    }
+
+    /**
+     * 判断运算符的优先级，使用数字来表示优先级大小
+     */
+    public int priority(int oper) {
+        if (oper == '/' || oper == '*') {
+            return 1;
+        } else if (oper == '+' || oper == '-') {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+
+    /**
+     * 查看栈顶的数据
+     */
+    public int peek() {
+        return this.stack[top];
+    }
+
+    /**
+     * 获取栈的容量
+     */
+    public int stackLength() {
+        return this.stack.length;
+    }
 }
 
 
